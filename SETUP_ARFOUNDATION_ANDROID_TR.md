@@ -1,62 +1,59 @@
-# Unity AR Foundation Android + iOS Kurulum (Hazirlanan Proje)
+# Unity AR Foundation Android + iOS Kurulum (Hazırlanan Proje)
 
-Bu klasorde temel Unity proje iskeleti ve AR Foundation paket manifesti olusturuldu.
+Bu klasörde AR odaklı temel Unity proje iskeleti ve AR Foundation paket manifesti oluşturuldu.
 
-## Benim yaptiklarim
+## Benim yaptıklarım
 
-- `Packages/manifest.json` olusturuldu.
-- `com.unity.xr.arfoundation`, `com.unity.xr.arcore` ve `com.unity.xr.arkit` bagimliliklari eklendi.
-- Moduler klasor yapisi olusturuldu:
+- `Packages/manifest.json` oluşturuldu.
+- `com.unity.xr.arfoundation`, `com.unity.xr.arcore` ve `com.unity.xr.arkit` bağımlılıkları eklendi.
+- Modüler klasör yapısı oluşturuldu:
   - `Assets/_Project/Modules/AR`
   - `Assets/_Project/Modules/Interaction`
   - `Assets/_Project/Modules/UI`
-  - `Assets/_Project/Modules/HealthLogic`
-  - `Assets/_Project/Modules/Data`
   - `Assets/_Project/Bootstrap`
-- Baslangic scriptleri eklendi:
+- Başlangıç scriptleri eklendi:
   - `ARPlacementController`
   - `TapToPlaceInput`
-  - `AssessRiskUseCase`
-  - `LocalSymptomRepository`
+  - `ARSetupGuide`
   - `SceneBootstrap`
 
-## Unity Editor'de senin bir kerelik tiklayacagin adimlar
+## Unity Editor'de senin bir kerelik tıklayacağın adımlar
 
-1. Unity Hub ile bu klasoru ac.
-2. Eksik editor modulleri varsa Unity Hub'dan kur:
+1. Unity Hub ile bu klasörü aç.
+2. Eksik editor modülleri varsa Unity Hub'dan kur:
    - Android Build Support
    - Android SDK & NDK Tools
    - OpenJDK
    - iOS Build Support
-3. Unity acildiginda:
+3. Unity açıldığında:
    - `File > Build Settings > Android > Switch Platform`
 4. `Edit > Project Settings > XR Plug-in Management > Android`:
-   - `ARCore` secenegini isaretle.
+   - `ARCore` seçeneğini işaretle.
 5. `Edit > Project Settings > XR Plug-in Management > iOS`:
-   - `ARKit` secenegini isaretle.
-6. Yeni sahne ac ve Hierarchy'ye ekle:
+   - `ARKit` seçeneğini işaretle.
+6. Yeni sahne aç ve Hierarchy'ye ekle:
    - `GameObject > XR > AR Session`
    - `GameObject > XR > XR Origin (AR)`
 7. `XR Origin (AR)` objesine ekle:
    - `AR Plane Manager`
    - `AR Raycast Manager`
-8. Bos bir GameObject olustur, `TapToPlaceInput` scriptini ekle.
-9. Ayni sahnede baska GameObject'e `ARPlacementController` ekle.
-   - `Raycast Manager` referansini `XR Origin (AR)` uzerindeki `ARRaycastManager` ile bagla.
-   - `Liver Prefab` alanina bir 3D model prefab'i ver.
-10. `TapToPlaceInput` icindeki `Placement Controller` alanina bu controller'i bagla.
-11. Android testi icin:
+8. Boş bir GameObject oluştur, `TapToPlaceInput` scriptini ekle.
+9. Aynı sahnede başka GameObject'e `ARPlacementController` ekle.
+   - `Raycast Manager` referansını `XR Origin (AR)` üzerindeki `ARRaycastManager` ile bağla.
+   - `Liver Prefab` alanına bir 3D model prefab'ı ver.
+10. `TapToPlaceInput` içindeki `Placement Controller` alanına bu controller'i bağla.
+11. Android testi için:
    - `File > Build Settings > Android > Build And Run`
-12. iOS testi icin:
+12. iOS testi için:
    - `File > Build Settings > iOS > Switch Platform`
-   - `Build` al ve Xcode ile cihaza yukle.
+   - `Build` al ve Xcode ile cihaza yükle.
 
-## Cross-platform notlari
+## Cross-platform notları
 
-- Kod tabani ayni kalir, AR Foundation her platformda uygun provider'i kullanir.
+- Kod tabanı aynı kalır, AR Foundation her platformda uygun provider'ı kullanır.
 - Android cihazda Google Play Services for AR (ARCore) gerekli olabilir.
-- iOS cihazda ARKit destekleyen model (genelde A9 ve ustu) gerekir.
+- iOS cihazda ARKit destekleyen model (genelde A9 ve üstü) gerekir.
 
 ## Not
 
-Bu uygulama tani koymaz. Semptom farkindaligi ve yonlendirme yardimcisi olarak tasarlanmistir.
+Bu uygulama AR eğitim amaçlıdır; tıbbi tanı veya tedavi kararı vermez.
