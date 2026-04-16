@@ -4,7 +4,7 @@ Bu proje, karaciğer nakli sonrası hastaya yalnızca AR destekli görsel eğiti
 
 ## Proje Amacı
 
-- Hastaya AR ile karaciğer anatomisini ve ameliyat sonrası süreci görsel olarak anlatmak
+- Hastaya AR ile karaciğer anatomisini ve ameliyat sonrası süreci anlatıp hastayı bilgilendirmek amaçlanmaktadır. Hasta karaciğer resmine tıkladığında karaciğer hakkında detayları veren AR uygulaması geliştirilecektir.
 
 ## Kapsam
 
